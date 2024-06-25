@@ -9,3 +9,13 @@ func Find[T any](array []T, cb func(item T) bool) *T {
 	}
 	return nil
 }
+
+// Reverse invierte el orden de los elementos en un array
+func Reverse[T any](array []T) []T {
+	length := len(array)
+	reversed := make([]T, length)
+	for i, v := range array {
+		reversed[length-1-i] = v
+	}
+	return reversed
+}

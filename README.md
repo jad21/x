@@ -47,3 +47,18 @@ Help Go, es una librería para ayudar a extender la sintaxis de golang
     }
 
 ```
+
+## hgo.Reverse
+
+```go
+    // Ejemplo con un array de enteros
+    numbers := []int{1, 2, 3, 4, 5}
+    fmt.Println("Original:", numbers)
+    fmt.Println("Reversed:", hgo.Reverse(numbers))
+
+    // Ejemplo con un array de strings
+    words := []string{"go", "is", "awesome"}
+    fmt.Println("Original:", words)
+    fmt.Println("Reversed:", hgo.Reverse(words))
+
+```
