@@ -62,3 +62,12 @@ Help Go, es una librería para ayudar a extender la sintaxis de golang
     fmt.Println("Reversed:", hgo.Reverse(words))
 
 ```
+
+## hgo.Contains
+
+```go
+     // Ejemplo con un array de enteros
+    numbers := []int{1, 2, 3, 4, 5}
+    fmt.Println("Contains 3:", hgo.Contains(numbers, 3)) // true
+
+```

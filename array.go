@@ -19,3 +19,13 @@ func Reverse[T any](array []T) []T {
 	}
 	return reversed
 }
+
+// Contains verifica si un array contiene un valor específico
+func Contains[T comparable](array []T, value T) bool {
+	for _, v := range array {
+		if v == value {
+			return true
+		}
+	}
+	return false
+}
