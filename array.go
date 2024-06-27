@@ -29,3 +29,12 @@ func Contains[T comparable](array []T, value T) bool {
 	}
 	return false
 }
+
+// Map aplica una función a cada elemento de un array y devuelve un nuevo array con los resultados
+func Map[T any, U any](array []T, f func(T) U) []U {
+	mapped := make([]U, len(array))
+	for i, v := range array {
+		mapped[i] = f(v)
+	}
+	return mapped
+}

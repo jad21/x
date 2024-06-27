@@ -4,9 +4,9 @@ Help Go, es una librería para ayudar a extender la sintaxis de golang
 ## hgo.IF
 
 ```go
-    import h "github.com/jad21/hgo"
+    import z "github.com/jad21/hgo"
     ...
-    if h.If(true, 1, 0) == 1{
+    if z.If(true, 1, 0) == 1{
         print("is true")
     }
 ```
@@ -17,7 +17,7 @@ Help Go, es una librería para ayudar a extender la sintaxis de golang
     package main
     import (
         "fmt"
-        h "github.com/jad21/hgo"
+        z "github.com/jad21/hgo"
     )
 
     // Book representa un libro con un título y una categoría
@@ -34,7 +34,7 @@ Help Go, es una librería para ayudar a extender la sintaxis de golang
         }
 
         // Criterio de búsqueda: encontrar el primer libro de la categoría "dev"
-        devBook := h.Find(books, func(b Book) bool {
+        devBook := z.Find(books, func(b Book) bool {
             return b.Category == "dev"
         })
 
@@ -69,5 +69,18 @@ Help Go, es una librería para ayudar a extender la sintaxis de golang
      // Ejemplo con un array de enteros
     numbers := []int{1, 2, 3, 4, 5}
     fmt.Println("Contains 3:", hgo.Contains(numbers, 3)) // true
+
+```
+## hgo.Map
+
+```go
+     // Ejemplo con un array de enteros, duplicando cada valor
+    numbers := []int{1, 2, 3, 4, 5}
+    double := func(n int) int {
+        return n * 2
+    }
+    doubledNumbers := hgo.Map(numbers, double)
+    fmt.Println("Original:", numbers) //     Original: [1 2 3 4 5]
+    fmt.Println("Doubled:", doubledNumbers) // Doubled: [2 4 6 8 10]
 
 ```
