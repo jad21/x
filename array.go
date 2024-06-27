@@ -38,3 +38,11 @@ func Map[T any, U any](array []T, f func(T) U) []U {
 	}
 	return mapped
 }
+
+// Repeat repite el valor el numero de veces que se desea
+func Repeat[T any](v T, count int) (results []T) {
+	for i := 0; i < count; i++ {
+		results = append(results, v)
+	}
+	return
+}

@@ -71,6 +71,7 @@ Help Go, es una librería para ayudar a extender la sintaxis de golang
     fmt.Println("Contains 3:", hgo.Contains(numbers, 3)) // true
 
 ```
+
 ## hgo.Map
 
 ```go
@@ -83,4 +84,12 @@ Help Go, es una librería para ayudar a extender la sintaxis de golang
     fmt.Println("Original:", numbers) //     Original: [1 2 3 4 5]
     fmt.Println("Doubled:", doubledNumbers) // Doubled: [2 4 6 8 10]
 
+```
+
+## hgo.Repeat
+
+```go
+     
+    results := hgo.Repeat("?", 3)
+    fmt.Println("Results:", results) //     Original: [? ? ?]
 ```
