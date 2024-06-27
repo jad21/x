@@ -89,7 +89,12 @@ Help Go, es una librería para ayudar a extender la sintaxis de golang
 ## hgo.Repeat
 
 ```go
-     
     results := hgo.Repeat("?", 3)
     fmt.Println("Results:", results) //     Original: [? ? ?]
+```
+
+## hgo.Unique
+
+```go
+    hgo.Unique([]int{1, 2, 2, 3, 4, 4, 5}) // [1 2 3 4 5]
 ```

@@ -46,3 +46,16 @@ func Repeat[T any](v T, count int) (results []T) {
 	}
 	return
 }
+
+// Unique devuelve un nuevo array con solo elementos únicos del array dado
+func Unique[T comparable](array []T) []T {
+	seen := make(map[T]struct{})
+	var uniqueArray []T
+	for _, v := range array {
+		if _, ok := seen[v]; !ok {
+			seen[v] = struct{}{}
+			uniqueArray = append(uniqueArray, v)
+		}
+	}
+	return uniqueArray
+}
