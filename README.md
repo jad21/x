@@ -17,6 +17,20 @@ if x.If(true, 1, 0) == 1{
 }
 ```
 
+## x.SwitchMap
+
+```go
+cases := map[int]string{
+    1: "one",
+    2: "two",
+    3: "three",
+}
+
+// Usando SwitchMap
+fmt.Println(x.SwitchMap(1, cases, "default")) // Output: one
+fmt.Println(x.SwitchMap(4, cases, "default")) // Output: default
+```
+
 ## x.Find
 
 ```go
