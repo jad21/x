@@ -1,4 +1,4 @@
-package hgo
+package x
 
 // Find: encontrar el primero que cumpla el criterio
 func Find[T any](array []T, cb func(item T) bool) *T {

@@ -1,4 +1,4 @@
-package hgo
+package x
 
 import "fmt"
 

@@ -1,23 +1,23 @@
-# hgo
+# x
 Help Go, es una librería para ayudar a extender la sintaxis de golang 
 
-## hgo.IF
+## x.IF
 
 ```go
-    import z "github.com/jad21/hgo"
+    import "github.com/jad21/x"
     ...
-    if z.If(true, 1, 0) == 1{
+    if x.If(true, 1, 0) == 1{
         print("is true")
     }
 ```
 
-## hgo.Find
+## x.Find
 
 ```go
     package main
     import (
         "fmt"
-        z "github.com/jad21/hgo"
+        "github.com/jad21/x"
     )
 
     // Book representa un libro con un título y una categoría
@@ -34,7 +34,7 @@ Help Go, es una librería para ayudar a extender la sintaxis de golang
         }
 
         // Criterio de búsqueda: encontrar el primer libro de la categoría "dev"
-        devBook := z.Find(books, func(b Book) bool {
+        devBook := x.Find(books, func(b Book) bool {
             return b.Category == "dev"
         })
 
@@ -48,31 +48,31 @@ Help Go, es una librería para ayudar a extender la sintaxis de golang
 
 ```
 
-## hgo.Reverse
+## x.Reverse
 
 ```go
     // Ejemplo con un array de enteros
     numbers := []int{1, 2, 3, 4, 5}
     fmt.Println("Original:", numbers)
-    fmt.Println("Reversed:", hgo.Reverse(numbers))
+    fmt.Println("Reversed:", x.Reverse(numbers))
 
     // Ejemplo con un array de strings
     words := []string{"go", "is", "awesome"}
     fmt.Println("Original:", words)
-    fmt.Println("Reversed:", hgo.Reverse(words))
+    fmt.Println("Reversed:", x.Reverse(words))
 
 ```
 
-## hgo.Contains
+## x.Contains
 
 ```go
      // Ejemplo con un array de enteros
     numbers := []int{1, 2, 3, 4, 5}
-    fmt.Println("Contains 3:", hgo.Contains(numbers, 3)) // true
+    fmt.Println("Contains 3:", x.Contains(numbers, 3)) // true
 
 ```
 
-## hgo.Map
+## x.Map
 
 ```go
      // Ejemplo con un array de enteros, duplicando cada valor
@@ -80,21 +80,21 @@ Help Go, es una librería para ayudar a extender la sintaxis de golang
     double := func(n int) int {
         return n * 2
     }
-    doubledNumbers := hgo.Map(numbers, double)
+    doubledNumbers := x.Map(numbers, double)
     fmt.Println("Original:", numbers) //     Original: [1 2 3 4 5]
     fmt.Println("Doubled:", doubledNumbers) // Doubled: [2 4 6 8 10]
 
 ```
 
-## hgo.Repeat
+## x.Repeat
 
 ```go
-    results := hgo.Repeat("?", 3)
+    results := x.Repeat("?", 3)
     fmt.Println("Results:", results) //     Original: [? ? ?]
 ```
 
-## hgo.Unique
+## x.Unique
 
 ```go
-    hgo.Unique([]int{1, 2, 2, 3, 4, 4, 5}) // [1 2 3 4 5]
+    x.Unique([]int{1, 2, 2, 3, 4, 4, 5}) // [1 2 3 4 5]
 ```
