@@ -39,6 +39,15 @@ func Map[T any, U any](array []T, f func(T) U) []U {
 	return mapped
 }
 
+// Map aplica una función a cada elemento de un index del array y devuelve un nuevo array con los resultados
+func MapIndex[T any](count int, f func(i int) T) []T {
+	mapped := make([]T, count)
+	for i := 0; i < count; i++ {
+		mapped[i] = f(i)
+	}
+	return mapped
+}
+
 // Repeat repite el valor el numero de veces que se desea
 func Repeat[T any](v T, count int) (results []T) {
 	for i := 0; i < count; i++ {

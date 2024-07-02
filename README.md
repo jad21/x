@@ -4,7 +4,7 @@ Help Go, es una librería para ayudar a extender la sintaxis de golang
 ## install
 
 ```bash
-go get "github.com/jad21/x"
+go get github.com/jad21/x
 ```
 
 ## x.IF
