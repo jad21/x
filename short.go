@@ -15,3 +15,11 @@ func SwitchMap[K comparable, V any](key K, cases map[K]V, defaultValue V) V {
 	}
 	return defaultValue
 }
+
+// If es una función genérica que devuelve el valor x si condition es true, de lo contrario devuelve y. Pero los valores son funciones
+func IfFn[T any](condition bool, TrueFn, FalseFn func() T) T {
+	if condition {
+		return TrueFn()
+	}
+	return FalseFn()
+}

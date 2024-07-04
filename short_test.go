@@ -25,6 +25,20 @@ func TestIf(t *testing.T) {
 	}
 }
 
+func TestIfFn(t *testing.T) {
+	var str *string
+	defaultFn := func() string { return "no" }
+	yesFn := func() string { return *str }
+	if got := IfFn(str != nil, yesFn, defaultFn); got != "no" {
+		t.Errorf("If(true, nil, 'no') = %v; want 'no'", got)
+	}
+	yes := "yes"
+	str = &yes
+	if got := IfFn(str != nil, yesFn, defaultFn); got != "yes" {
+		t.Errorf("If(false, *'yes', 'no') = %v; want 'yes'", got)
+	}
+}
+
 func TestSwitchMap(t *testing.T) {
 	cases := map[int]string{
 		1: "one",
