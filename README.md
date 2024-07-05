@@ -118,3 +118,36 @@ fmt.Println("Results:", results) //     Original: [? ? ?]
 ```go
 x.Unique([]int{1, 2, 2, 3, 4, 4, 5}) // [1 2 3 4 5]
 ```
+## x.Sort
+
+```go
+ // Ejemplo con un array de enteros
+numbers := []int{5, 3, 4, 1, 2}
+x.Sort(numbers, func(i, j int) bool {
+    return i < j
+})
+fmt.Println("Sorted numbers:", numbers) // Sorted numbers: [1 2 3 4 5]
+
+// Ejemplo con un array de strings
+words := []string{"banana", "apple", "cherry"}
+x.Sort(words, func(i, j string) bool {
+    return i < j
+})
+fmt.Println("Sorted words:", words) // Sorted words: [apple banana cherry]
+
+// Ejemplo con una estructura personalizada
+type Person struct {
+    Name string
+    Age  int
+}
+
+people := []Person{
+    {"Alice", 30},
+    {"Bob", 25},
+    {"Charlie", 35},
+}
+x.Sort(people, func(i, j Person) bool {
+    return i.Age < j.Age
+})
+fmt.Println("Sorted people by age:", people) // Sorted people by age: [{Bob 25} {Alice 30} {Charlie 35}]
+```

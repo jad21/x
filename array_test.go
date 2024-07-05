@@ -76,3 +76,58 @@ func TestUnique(t *testing.T) {
 		t.Errorf("Unique() = %v; want %v", result, expected)
 	}
 }
+
+// TestSortInt prueba la función Sort con un array de enteros
+func TestSortInt(t *testing.T) {
+	numbers := []int{5, 3, 4, 1, 2}
+	expected := []int{1, 2, 3, 4, 5}
+
+	Sort(numbers, func(i, j int) bool {
+		return i < j
+	})
+
+	if !reflect.DeepEqual(numbers, expected) {
+		t.Errorf("expected %v, got %v", expected, numbers)
+	}
+}
+
+// TestSortString prueba la función Sort con un array de strings
+func TestSortString(t *testing.T) {
+	words := []string{"banana", "apple", "cherry"}
+	expected := []string{"apple", "banana", "cherry"}
+
+	Sort(words, func(i, j string) bool {
+		return i < j
+	})
+
+	if !reflect.DeepEqual(words, expected) {
+		t.Errorf("expected %v, got %v", expected, words)
+	}
+}
+
+// TestSortStruct prueba la función Sort con un array de estructuras personalizadas
+func TestSortStruct(t *testing.T) {
+	type Person struct {
+		Name string
+		Age  int
+	}
+
+	people := []Person{
+		{"Alice", 30},
+		{"Bob", 25},
+		{"Charlie", 35},
+	}
+	expected := []Person{
+		{"Bob", 25},
+		{"Alice", 30},
+		{"Charlie", 35},
+	}
+
+	Sort(people, func(i, j Person) bool {
+		return i.Age < j.Age
+	})
+
+	if !reflect.DeepEqual(people, expected) {
+		t.Errorf("expected %v, got %v", expected, people)
+	}
+}

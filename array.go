@@ -1,5 +1,7 @@
 package x
 
+import "sort"
+
 // Find: encontrar el primero que cumpla el criterio
 func Find[T any](array []T, cb func(item T) bool) *T {
 	for _, v := range array {
@@ -67,4 +69,11 @@ func Unique[T comparable](array []T) []T {
 		}
 	}
 	return uniqueArray
+}
+
+// Sort ordena un array utilizando una función de comparación
+func Sort[T any](array []T, less func(i, j T) bool) {
+	sort.Slice(array, func(i, j int) bool {
+		return less(array[i], array[j])
+	})
 }
