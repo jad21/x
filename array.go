@@ -12,6 +12,17 @@ func Find[T any](array []T, cb func(item T) bool) *T {
 	return nil
 }
 
+// Filter devuelve un nuevo array con los elementos que cumplen con un criterio específico
+func Filter[T any](array []T, criteria func(T) bool) []T {
+	var result []T
+	for _, v := range array {
+		if criteria(v) {
+			result = append(result, v)
+		}
+	}
+	return result
+}
+
 // Reverse invierte el orden de los elementos en un array
 func Reverse[T any](array []T) []T {
 	length := len(array)

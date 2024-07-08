@@ -68,6 +68,17 @@ func main() {
 
 ```
 
+## x.Filter
+
+```go
+ // Ejemplo con un array de enteros, filtrando valores mayores que 3
+numbers := []int{1, 2, 3, 4, 5}
+greaterThanThree := func(n int) bool {
+    return n > 3
+}
+x.Filter(numbers, greaterThanThree) // [4 5]
+```
+
 ## x.Reverse
 
 ```go

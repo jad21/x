@@ -131,3 +131,31 @@ func TestSortStruct(t *testing.T) {
 		t.Errorf("expected %v, got %v", expected, people)
 	}
 }
+
+// TestFilterInt prueba la función Filter con un array de enteros
+func TestFilterInt(t *testing.T) {
+	numbers := []int{1, 2, 3, 4, 5}
+	expected := []int{4, 5}
+
+	result := Filter(numbers, func(n int) bool {
+		return n > 3
+	})
+
+	if !reflect.DeepEqual(result, expected) {
+		t.Errorf("expected %v, got %v", expected, result)
+	}
+}
+
+// TestFilterString prueba la función Filter con un array de strings
+func TestFilterString(t *testing.T) {
+	words := []string{"go", "is", "awesome"}
+	longerThanTwo := func(s string) bool {
+		return len(s) > 2
+	}
+	expected := []string{"awesome"}
+	result := Filter(words, longerThanTwo)
+
+	if !reflect.DeepEqual(result, expected) {
+		t.Errorf("expected %v, got %v", expected, result)
+	}
+}
