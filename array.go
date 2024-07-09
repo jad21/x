@@ -82,6 +82,20 @@ func Unique[T comparable](array []T) []T {
 	return uniqueArray
 }
 
+// UniqueBy devuelve un nuevo array con solo elementos únicos del array dado, basados en un atributo específico
+func UniqueBy[T any, K comparable](array []T, keyFunc func(T) K) []T {
+	seen := make(map[K]struct{})
+	var uniqueArray []T
+	for _, v := range array {
+		key := keyFunc(v)
+		if _, ok := seen[key]; !ok {
+			seen[key] = struct{}{}
+			uniqueArray = append(uniqueArray, v)
+		}
+	}
+	return uniqueArray
+}
+
 // Sort ordena un array utilizando una función de comparación
 func Sort[T any](array []T, less func(i, j T) bool) {
 	sort.Slice(array, func(i, j int) bool {

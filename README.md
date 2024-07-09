@@ -129,6 +129,36 @@ fmt.Println("Results:", results) //     Original: [? ? ?]
 ```go
 x.Unique([]int{1, 2, 2, 3, 4, 4, 5}) // [1 2 3 4 5]
 ```
+
+## x.Unique
+
+```go
+// Ejemplo con una estructura personalizada
+type Person struct {
+    Name string
+    Age  int
+}
+
+people := []Person{
+    {"Alice", 30},
+    {"Bob", 25},
+    {"Charlie", 30},
+    {"Alice", 25},
+}
+
+// Únicos por nombre
+uniqueByName := x.UniqueBy(people, func(p Person) string {
+    return p.Name
+})
+fmt.Println("Unique by name:", uniqueByName)
+
+// Únicos por edad
+uniqueByAge := x.UniqueBy(people, func(p Person) int {
+    return p.Age
+})
+fmt.Println("Unique by age:", uniqueByAge)
+```
+
 ## x.Sort
 
 ```go

@@ -159,3 +159,40 @@ func TestFilterString(t *testing.T) {
 		t.Errorf("expected %v, got %v", expected, result)
 	}
 }
+
+func TestUniqueBy(t *testing.T) {
+	type Person struct {
+		Name string
+		Age  int
+	}
+
+	people := []Person{
+		{"Alice", 30},
+		{"Bob", 25},
+		{"Charlie", 30},
+		{"Alice", 25},
+	}
+
+	uniqueByName := UniqueBy(people, func(p Person) string {
+		return p.Name
+	})
+	expectedByName := []Person{
+		{"Alice", 30},
+		{"Bob", 25},
+		{"Charlie", 30},
+	}
+	if !reflect.DeepEqual(uniqueByName, expectedByName) {
+		t.Errorf("expected %v, got %v", expectedByName, uniqueByName)
+	}
+
+	uniqueByAge := UniqueBy(people, func(p Person) int {
+		return p.Age
+	})
+	expectedByAge := []Person{
+		{"Alice", 30},
+		{"Bob", 25},
+	}
+	if !reflect.DeepEqual(uniqueByAge, expectedByAge) {
+		t.Errorf("expected %v, got %v", expectedByAge, uniqueByAge)
+	}
+}
